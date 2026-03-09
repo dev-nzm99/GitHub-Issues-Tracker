@@ -4,6 +4,29 @@ let currentFilter = "all";
 
 const issuesList = document.getElementById("issues-list");
 const issueCount = document.getElementById("issue-count");
+const searchInput = document.getElementById("search-input");
+
+
+const searchIssuesFromAPI = (searchText) => {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    .then((res) => res.json())
+    .then((data) => {
+      displayedIssues = data.data || [];
+      applyFilter();
+    })
+};
+
+searchInput.addEventListener("input", (e) => {
+  const searchText = e.target.value.trim();
+
+  if (searchText === "") {
+    displayedIssues = [...allIssues];
+    applyFilter();
+    return;
+  }
+
+  searchIssuesFromAPI(searchText);
+});
 
 const fetchedIssues = () => {
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
