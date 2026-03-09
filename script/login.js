@@ -11,7 +11,7 @@ form.addEventListener("submit", function (e) {
   const password = document.getElementById("password").value.trim();
 
   if (username === defaultUsername && password === defaultPassword) {
-    window.location.href = "index.html";
+    window.location.href = "./home.html";
   } else {
     errorMsg.classList.remove("hidden");
   }
