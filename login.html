@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Issues Tracker - Login</title>
+
+    <!-- tailwind + daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-[#ececec] flex items-center justify-center px-4">
+
+    <div class="w-full max-w-sm bg-white rounded-lg shadow-xl p-6">
+
+        <div class="text-center mb-6">
+            <div class="flex justify-center mb-4">
+                <img src="./assets/github-logo.png" alt="GitHub Logo" class="w-16 h-16 object-contain" />
+            </div>
+
+            <h1 class="text-3xl font-bold text-gray-800">GitHub Issues Tracker</h1>
+            <p class="text-sm text-gray-500 mt-1">Sign in to manage your issues</p>
+        </div>
+
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label class="block text-sm text-gray-700 mb-2">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" value="admin"
+                    class="input input-bordered w-full bg-white" />
+                <p class="text-xs text-purple-600 mt-1">Default: admin</p>
+            </div>
+
+            <div>
+                <label class="block text-sm text-gray-700 mb-2">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" value="admin123"
+                    class="input input-bordered w-full bg-white" />
+                <p class="text-xs text-purple-600 mt-1">Default: admin123</p>
+            </div>
+
+            <p id="errorMsg" class="text-red-500 text-sm hidden">Invalid username or password</p>
+
+            <button type="submit"
+                class="btn w-full border-none text-white mt-2 bg-gradient-to-r from-indigo-700 to-purple-600 hover:from-indigo-800 hover:to-purple-700">
+                Sign In
+            </button>
+        </form>
+
+        <div class="divider text-sm text-gray-500 my-5">OR</div>
+
+        <div class="bg-gray-50 rounded-md p-5 text-center border border-gray-100">
+            <p class="text-xs text-gray-500 mb-4">Demo Credentials:</p>
+            <p class="text-sm font-semibold text-gray-800">Username: admin</p>
+            <p class="text-sm font-semibold text-gray-800">Password: admin123</p>
+        </div>
+    </div>
+
+    <script src="./script/login.js"></script>
+</body>
+
+</html>
